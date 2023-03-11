@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Machine</title>
+    <link rel="stylesheet" href="./index.css">
+    <script>
+
+        const quoteBank = [{
+            quote: 'You are the shuckiest shuck faced shuck in the world!',
+            author: ' James Dashner'
+        }, {
+            quote: 'Her name badge read: Hello! My name is DIE, DEMIGOD SCUM!',
+            author: 'Rick Riordan'
+        }, {
+            quote: 'Insane means fewer cameras!',
+            author: 'Ally Carter'
+        }, {
+            quote: 'Never ask an elf for help; they might decide your better off dead, eh?',
+            author: 'Christopher Paolini'
+        }, {
+            quote: 'What\'s my age again',
+            author: 'Blink-182'
+        }, {
+            quote: 'Act first, explain later.',
+            author: 'Dan Brown'
+        },]
+
+        window.onload = init;
+        function init() {
+            generateQuote()
+        }
+
+
+        function generateQuote() {
+            let bankSize = quoteBank.length
+            console.log('quote generated')
+            document.getElementById('text').innerText = quoteBank[Math.floor(Math.random() * bankSize)].quote
+            document.getElementById('author').innerText = '-' + quoteBank[Math.floor(Math.random() * bankSize)].author
+
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="body">
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <header>
+        <h1>Random quote machine:</h1>
+    </header>
+
+    <wrapper id="quote-box">
+        <div id="text"></div>
+        <div id="author"></div>
+        <button id="new-quote" onclick={generateQuote()}>New Quote</button>
+        <a href="twitter.com/intent/tweet" target="_blank" id="tweet-quote" class="btn btn-primary">Tweet quote</a>
+    </wrapper>
+
+   
+</body>
+
+</html>
